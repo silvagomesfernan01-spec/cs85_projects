@@ -70,3 +70,13 @@
 </html>
  
 <?php
+
+/*
+MY DEBUGGING LOG:
+Problem: I had written an 'if ($isCustomized)' check nested inside my XL size block to add
+the $8.00 (custom fee + stencil fee), but I also had a separate 'if ($isCustomized)'
+block elsewhere in the code that added the same $8.00 again.
+Solution: I went through the $details list line by line instead of just checking the
+total, and noticed "Custom Text Fee" and "XL Stencil Handling Fee" each appeared twice
+on the receipt. I removed the duplicate. 
+*/
