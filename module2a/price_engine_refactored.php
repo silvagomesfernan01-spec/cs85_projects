@@ -35,3 +35,29 @@
                 $finalPrice += 2.50;
                 $details .= "<li>Size (XL) Upcharge: <span>+$2.50</span></li>";
             }
+
+            // Premium color upcharge: for either color we use the same upcharge
+            // a single || condition
+            if ($color == 'Sunset Orange' || $color 'Ocean Blue') {
+                $finalPrice += 2.00;
+                $details .= "<li>Premium Color Upcharge: <span>+$2.00</span></li>";
+            }
+
+            // Customization fees: "customized and XL" into one && check
+            // instead of nesting. elseif handles "customized but not XL" case.
+            if ($isCustomized && $size == 'XL') {
+                $finalPrice += 8.00; // $5.00 base fee + $3.00 XL stencil handling fee
+                $details .= "<li>Custom Text Fee: <span>+$5.00</span></li>";
+                $details .= "<li>XL Stencil Handling Fee: <span>+$3.00</span></li>";
+            } elseif ($isCustomized) {
+                $finalPrice += 5.00;
+                $details .= "<li>Custom Text Fee: <span>+$5.00</span></li>";
+            }
+
+            // Long Name discount
+            if (strlen($customerFirstName) > 6) {
+                $finalPrice -= 1.00;
+                $details .= "<li>Long Name Discount: <span>-$1.00</span></li>";
+            }
+
+            
