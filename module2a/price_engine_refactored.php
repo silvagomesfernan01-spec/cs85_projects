@@ -38,7 +38,7 @@
 
             // Premium color upcharge: for either color we use the same upcharge
             // a single || condition
-            if ($color == 'Sunset Orange' || $color 'Ocean Blue') {
+            if ($color == 'Sunset Orange' || $color == 'Ocean Blue') {
                 $finalPrice += 2.00;
                 $details .= "<li>Premium Color Upcharge: <span>+$2.00</span></li>";
             }
