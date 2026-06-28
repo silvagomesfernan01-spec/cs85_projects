@@ -25,3 +25,13 @@
             // Part B: Refactiored logic using if/elseif/else and compound operators
             $finalPrice = 22.50;
             $details = "<li>Base Price: <span>$" . number_format($finalPrice, 2) . "</span></li>";
+
+            // Size upcharge: a shirt is only ever S, M, L or XL
+            // elseif instead of two separate ifs.
+            if ($size == 'L') {
+                $finalPrice += 1.75;
+                $details .= "<li>Size (L) Upcharge: <span>+$1.75</span></li>";
+            } elseif ($size == 'XL') {
+                $finalPrice += 2.50;
+                $details .= "<li>Size (XL) Upcharge: <span>+$2.50</span></li>";
+            }
