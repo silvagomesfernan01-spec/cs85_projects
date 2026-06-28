@@ -60,4 +60,13 @@
                 $details .= "<li>Long Name Discount: <span>-$1.00</span></li>";
             }
 
-            
+            // --- DO NOT EDIT BELOW THIS LINE ---
+            echo "<ul>" . $details . "</ul>";
+            echo "<ul><li><span class='total'>Final Price:</span> <span class='total'>$" . number_format($finalPrice, 2) . "</span></li></ul>";
+ 
+        ?>
+    </div>
+</body>
+</html>
+ 
+<?php
