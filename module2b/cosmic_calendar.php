@@ -41,6 +41,21 @@
                 for ($i = $nameLength; $i <= $dayOfYear; $i++) {
                     $cssClass = "day-box";
 
-                    if ()
+                    if ($i % $nameLength === 0 && $i % $month === 0) {
+                        $cssClass .= " cosmic-both";
+                    } elseif ($i % $nameLength === 0) {
+                        $cssClass .= " cosmic-name";
+                    } elseif ($i % $month === 0) {
+                        $cssClass .= " cosmic-month";
+                    }
+
+                    // Step 5: Display the box
+                    echo "<div class='$cssClass'>$i</div>";
                 }
-            }
+
+            } else {
+                echo "<p>Could not load calendar data &mdash; the API request failed.</p>";
+                }"
+
+                  /*
+                MY DEBUGGING LOG:
