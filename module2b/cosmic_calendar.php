@@ -55,7 +55,12 @@
 
             } else {
                 echo "<p>Could not load calendar data &mdash; the API request failed.</p>";
-                }"
+                }
 
                   /*
-                MY DEBUGGING LOG:
+                MY DEBUGGING LOG: */
+            ?>
+        </div>
+    </div>
+</body>
+</html>
