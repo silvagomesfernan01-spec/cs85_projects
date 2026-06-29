@@ -56,11 +56,24 @@
             } else {
                 echo "<p>Could not load calendar data &mdash; the API request failed.</p>";
                 }
-
-                  /*
-                MY DEBUGGING LOG: */
             ?>
         </div>
     </div>
 </body>
 </html>
+
+/*
+MY DEBUGGING LOG:
+Problem: After fixing a syntax error, I still got a "resource not found" error
+trying to load cosmic_calendar.php in the browser. I had started the PHP
+built-in server with `php -S localhost:8000` from inside my module2b folder
+and was requesting localhost:8000/module2b/cosmic_calendar.php.
+Solution: I learned that php -S treats whatever folder you launch it from as
+the server's document root. Since I launched it from inside module2b itself,
+that folder WAS the root — there was no nested module2b folder inside it for
+the URL to find. I fixed it by requesting localhost:8000/cosmic_calendar.php
+instead (dropping the /module2b/ prefix), which matched where the server was
+actually rooted.
+*/
+        
+        
